@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The Gospel Experience | Harbor Bay</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,800&display=swap">
+<style>
+/* Built in the Ignition 2026-27 look (ignitionstudents.org + the NorCal flier):
+   paper, black tape labels, orange/yellow paint, Poppins, graffiti lettering cut from the team's Canva file. */
+:root {
+  --paper: #f3f1ec;
+  --card: #ffffff;
+  --ink: #14110f;
+  --muted: #4d4743;
+  --orange: #e85d3a;
+  --orange-2: #ff8a4c;
+  --salmon: #e2735a;
+  --yellow: #f5b731;
+  --line: #d9d4cb;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+html, body { overflow-x: clip; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 17px/1.55 "Poppins", system-ui, sans-serif; }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+
+/* Tape: the torn label shape from the flier */
+.tape { display: inline-block; padding: 6px 14px 7px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.25;
+  clip-path: polygon(0 6%, 3% 0, 97% 3%, 100% 0, 99% 50%, 100% 96%, 96% 100%, 4% 97%, 0 100%, 1% 50%); }
+.tape.black { background: var(--ink); color: #f3f1ec; }
+.tape.yellow { background: var(--yellow); }
+.tape.orange { background: var(--orange-2); }
+.tape.salmon { background: var(--salmon); }
+
+.sample { background: var(--ink); color: #f3f1ec; font-size: 13px; font-weight: 600; text-align: center; padding: 8px 16px; }
+.sample b { color: var(--yellow); }
+
+/* Header */
+.top { display: flex; align-items: center; justify-content: space-between; padding: 18px 0 0; }
+.top .ign { width: 132px; }
+.top .aym { width: 58px; }
+
+/* Hero */
+.hero { position: relative; padding: 18px 0 44px; }
+.hero .splat { position: absolute; z-index: 0; pointer-events: none; }
+.hero .splat.y { width: 300px; right: -90px; bottom: 40px; opacity: 0.9; }
+.hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; align-items: center; }
+.hero h1 { margin: 6px 0 0; }
+.hero h1 img { width: 100%; max-width: 760px; }
+.hero h1 span { position: absolute; left: -9999px; }
+.sub { margin: 14px 0 0; font-weight: 800; font-style: italic; text-transform: uppercase; font-size: clamp(15px, 2.4vw, 19px); line-height: 1.35; }
+.lede { margin: 14px 0 0; max-width: 36em; color: var(--muted); }
+.facts { display: grid; gap: 10px; margin-top: 22px; max-width: 420px; }
+.facts .tape { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 16px 11px; text-transform: none; }
+.facts .row1 { justify-content: space-around; }
+.facts .num { display: grid; justify-items: center; gap: 2px; font-size: 12px; font-weight: 700; text-transform: uppercase; }
+.facts .num img { height: 34px; width: auto; }
+.facts .bar { width: 2px; align-self: stretch; background: var(--ink); }
+.facts strong { display: block; font-size: 15px; text-transform: uppercase; }
+.facts small { display: block; font-size: 12.5px; font-weight: 600; }
+.ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.btn { display: inline-block; text-decoration: none; font-weight: 800; text-transform: uppercase; font-size: 15px; padding: 13px 22px 14px; }
+.btn.go { background: var(--orange); color: #fff; clip-path: polygon(0 8%, 4% 0, 96% 4%, 100% 0, 99% 92%, 100% 100%, 3% 96%, 0 100%); }
+.btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 2.5px var(--ink); border-radius: 2px; }
+
+.photo { position: relative; justify-self: center; width: min(320px, 82vw); background: #fff; padding: 10px 10px 40px; transform: rotate(2deg); box-shadow: 0 10px 24px rgba(20,17,15,0.18); }
+.photo img { width: 100%; aspect-ratio: 9 / 13; object-fit: cover; object-position: 50% 55%; filter: saturate(1.1) contrast(1.05); }
+.photo figcaption { position: absolute; left: 12px; right: 12px; bottom: 10px; font-size: 13px; font-weight: 600; color: var(--muted); }
+.photo::before { content: ""; position: absolute; top: -12px; left: 50%; width: 110px; height: 26px; margin-left: -55px; background: rgba(245,183,49,0.85); transform: rotate(-4deg); }
+
+/* Sections */
+section { padding: 48px 0; border-top: 2px solid var(--ink); position: relative; }
+.label { margin-bottom: 14px; }
+h2 { margin: 0; font-size: clamp(28px, 5vw, 44px); line-height: 1.08; font-weight: 800; text-transform: uppercase; }
+h2 em { font-style: normal; color: var(--orange); }
+.intro { margin: 12px 0 0; max-width: 40em; color: var(--muted); }
+
+/* GOSPEL letters */
+.gospel { list-style: none; margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
+.gospel li { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 16px; align-items: center; background: var(--card); padding: 14px 18px 14px 14px; border-left: 6px solid var(--orange); }
+.gospel li:nth-child(n+4) { border-left-color: var(--yellow); }
+.gospel .l { font-size: 52px; line-height: 1; font-weight: 800; color: var(--orange); text-align: center; }
+.gospel li:nth-child(n+4) .l { color: var(--ink); }
+.gospel p { margin: 0; font-weight: 600; font-size: 17px; line-height: 1.35; }
+.after { margin-top: 18px; }
+
+/* Expect */
+.expect { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; margin-top: 24px; }
+.expect div { background: var(--card); padding: 18px 20px; }
+.expect h3 { margin: 0 0 6px; font-size: 18px; font-weight: 800; text-transform: uppercase; }
+.expect p { margin: 0; color: var(--muted); font-size: 16px; }
+
+/* Times */
+.times { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 10px; }
+.times li { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 14px; align-items: center; background: var(--card); padding: 12px 14px; }
+.times .d { font-weight: 800; text-transform: uppercase; line-height: 1.15; }
+.times .d b { display: block; font-size: 26px; }
+.times .w { font-weight: 600; }
+.times .w small { display: block; font-weight: 500; color: var(--muted); font-size: 14px; }
+.times .tag { justify-self: start; margin-top: 4px; font-size: 12px; padding: 3px 10px 4px; }
+.times li.more { background: transparent; border: 2.5px dashed var(--ink); }
+
+/* Sign up */
+.signup-head img { height: 52px; width: auto; }
+.options { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; margin-top: 24px; }
+.opt { background: var(--card); padding: 22px; position: relative; }
+.opt h3 { margin: 10px 0 8px; font-size: 22px; font-weight: 800; text-transform: uppercase; line-height: 1.15; }
+.opt p { margin: 0; color: var(--muted); font-size: 16px; }
+form { display: grid; gap: 12px; margin-top: 16px; }
+label { display: grid; gap: 4px; font-size: 14px; font-weight: 700; text-transform: uppercase; }
+input, select { font: 500 16px/1.3 "Poppins", system-ui, sans-serif; padding: 11px 12px; border: 2px solid var(--ink); border-radius: 0; background: var(--paper); color: var(--ink); width: 100%; min-width: 0; }
+.row2 { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; }
+form .btn { border: 0; cursor: pointer; justify-self: start; }
+.form-msg { font-weight: 700; color: var(--orange); font-size: 14px; }
+
+/* Where */
+.where { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; margin-top: 24px; align-items: start; }
+.addr { display: grid; gap: 10px; }
+.addr .tape { font-size: 17px; padding: 10px 16px 11px; }
+.origin { background: var(--card); padding: 12px 12px 16px; }
+.origin img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.origin p { margin: 10px 4px 0; font-size: 15px; color: var(--muted); }
+
+/* FAQ */
+.faq { margin-top: 18px; max-width: 46em; }
+details { border-bottom: 2px solid var(--ink); padding: 14px 0; }
+summary { cursor: pointer; font-weight: 700; font-size: 17px; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; font-weight: 800; color: var(--orange); font-size: 22px; line-height: 1; }
+details[open] summary::after { content: "\2212"; }
+details p { margin: 10px 0 0; color: var(--muted); }
+
+/* Invite band */
+.invite { background: var(--ink); color: #f3f1ec; text-align: center; padding: 64px 16px 48px; position: relative; overflow: hidden; border-top: 0; }
+.invite .cwrap { position: relative; width: min(560px, 90%); margin: 0 auto; }
+.invite .splat { position: absolute; width: 58%; left: 21%; top: 50%; transform: translateY(-50%); opacity: 0.95; }
+.invite .cw { position: relative; width: 100%; filter: invert(1); }
+.invite p { position: relative; margin: 34px auto 0; max-width: 30em; font-weight: 600; }
+
+footer { padding: 24px 0 40px; font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; }
+
+@media (min-width: 760px) {
+  .top .ign { width: 170px; }
+  .top .aym { width: 72px; }
+  .hero-grid { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 40px; }
+  .hero .splat.y { width: 360px; right: -70px; top: 40px; bottom: auto; }
+  .gospel { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .gospel li { grid-auto-flow: row; }
+  .expect { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .times { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .options { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); }
+  .row2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .where { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); }
+}
+@media (min-width: 760px) {
+  /* G O S down the left column, P E L down the right */
+  .gospel { grid-auto-flow: column; grid-template-rows: repeat(3, auto); }
+}
+</style>
+</head>
+<body>
+<div class="sample"><b>SAMPLE</b> for the Gospel Experience team. Not public. Dates, wording, photos and sign-up are placeholders until the team decides.</div>
+
+<div class="wrap">
+  <header class="top">
+    <img class="ign" src="img/ignition-logo.png" alt="Ignition 2026">
+    <img class="aym" src="img/aym-logo.png" alt="Area Youth Ministry">
+  </header>
+
+  <div class="hero">
+    <img class="splat y" src="img/splat-yellow.png" alt="">
+    <div class="hero-grid">
+      <div>
+        <h1><img src="img/type-gospel-experience.png" alt=""><span>The Gospel Experience</span></h1>
+        <p class="sub">An interactive walk-through of the good news. All ages.</p>
+        <p class="lede">Built for Ignition NorCal in October, now open at Harbor Bay through January. About 30 minutes, room by room, with the people you came with.</p>
+        <div class="facts">
+          <div class="tape salmon row1">
+            <span class="num"><img src="img/type-30.png" alt="30">Minutes</span>
+            <span class="bar"></span>
+            <span class="num"><img src="img/type-free.png" alt="Free">All ages</span>
+          </div>
+          <div class="tape orange"><span><strong>Guided on Sundays</strong><small>A guide walks your group through. Groups of up to 10 start every 10 to 15 minutes.</small></span></div>
+          <div class="tape yellow"><span><strong>Open through January 2027</strong><small>Select Friday nights are self-guided.</small></span></div>
+        </div>
+        <div class="ctas">
+          <a class="btn go" href="#times">See open times</a>
+          <a class="btn ghost" href="#signup">How to sign up</a>
+        </div>
+      </div>
+      <figure class="photo">
+        <img src="img/hb-night-walk.jpg" alt="Walking across the Harbor Bay courtyard at night under string lights">
+        <figcaption>Harbor Bay, Alameda</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <section id="gospel">
+    <div class="label"><span class="tape black">What it is</span></div>
+    <h2>G.O.S.P.E.L. means <em>good news</em></h2>
+    <p class="intro">Before you walk in, your guide explains the word. Each letter is one part of the story, and each room walks you through it. We'll leave the rest for you to see in person.</p>
+    <ol class="gospel">
+      <li><span class="l">G</span><p>God created us to be with him</p></li>
+      <li><span class="l">O</span><p>Our sins separate us from God</p></li>
+      <li><span class="l">S</span><p>Sins cannot be removed by good deeds</p></li>
+      <li><span class="l">P</span><p>Paying the price for sins, Jesus died and rose again</p></li>
+      <li><span class="l">E</span><p>Everyone who trusts in him alone has eternal life</p></li>
+      <li><span class="l">L</span><p>Life with Jesus starts now and lasts forever</p></li>
+    </ol>
+    <p class="after"><span class="tape yellow">Then a quiet room to sit, pray, and talk it over</span></p>
+  </section>
+
+  <section>
+    <div class="label"><span class="tape black">What to expect</span></div>
+    <h2>Easy to say <em>yes</em> to</h2>
+    <div class="expect">
+      <div><h3>About 30 minutes</h3><p>Plus time after to talk, if you'd like. No cost.</p></div>
+      <div><h3>Small groups</h3><p>Up to 10 people start together every 10 to 15 minutes. Come with the friend or family who invited you.</p></div>
+      <div><h3>Christian, and open to all</h3><p>It's the Christian message, shared plainly. Wherever you are with faith, you're welcome.</p></div>
+    </div>
+  </section>
+
+  <section id="times">
+    <div class="label"><span class="tape black">Open times</span></div>
+    <h2>Pick a <em>time</em></h2>
+    <ul class="times">
+      <li><span class="d">Sun<b>11/1</b></span><span class="w">10 to 11am, 3:30 to 4:30pm<small><span class="tape orange tag">Guided</span></small></span></li>
+      <li><span class="d">Sun<b>11/8</b></span><span class="w">10 to 11am, 3:30 to 4:30pm<small><span class="tape orange tag">Guided</span></small></span></li>
+      <li><span class="d">Fri<b>11/13</b></span><span class="w">7 to 9:30pm<small><span class="tape yellow tag">Self-guided</span></small></span></li>
+      <li><span class="d">Sun<b>11/15</b></span><span class="w">10 to 11am<small>Thanksgiving Service is at 9am and 12pm. <span class="tape orange tag">Guided</span></small></span></li>
+      <li><span class="d">Sun<b>11/22</b></span><span class="w">10:30 to 11:30am<small><span class="tape orange tag">Guided</span></small></span></li>
+      <li class="more"><span class="d">Dec<b>+ Jan</b></span><span class="w">More dates coming<small>Check back, or ask the friend who invited you.</small></span></li>
+    </ul>
+  </section>
+
+  <section id="signup">
+    <div class="label signup-head"><img src="img/type-sign-up.png" alt="Sign up!"></div>
+    <p class="intro">Two ways this could work. The team picks one (or both) before anything goes public.</p>
+    <div class="options">
+      <div class="opt">
+        <span class="tape black">Option A</span>
+        <h3>Come with the friend who invited you</h3>
+        <p>They save your spots on the members' sign-up sheet and bring you along. Nothing new to set up.</p>
+      </div>
+      <div class="opt">
+        <span class="tape black">Option B</span>
+        <h3>Request a time</h3>
+        <p>For guests who found this on their own. Someone from the team confirms a time with you.</p>
+        <form id="req">
+          <div class="row2">
+            <label>Name<input type="text" value="Example Name" autocomplete="off"></label>
+            <label>Email<input type="email" value="name@example.com" autocomplete="off"></label>
+          </div>
+          <div class="row2">
+            <label>How many people<select><option>1</option><option selected>2</option><option>3 to 5</option><option>6 to 10</option></select></label>
+            <label>Preferred time<select><option>Sun 11/8, 10am</option><option>Sun 11/8, 3:30pm</option><option>Fri 11/13, evening</option></select></label>
+          </div>
+          <button class="btn go" type="submit">Request a time</button>
+          <p class="form-msg" id="msg" hidden>Sample only. Nothing was sent.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="label"><span class="tape black">Where</span></div>
+    <h2>Harbor Bay, <em>Alameda</em></h2>
+    <div class="where">
+      <div class="addr">
+        <span class="tape black">1265 Harbor Bay Pkwy<br>Alameda, CA 94502</span>
+        <span class="tape black">Sundays + select<br>Friday nights</span>
+      </div>
+      <figure class="origin">
+        <img src="img/hb-ignition-stage.jpg" alt="The Ignition NorCal stage at Harbor Bay">
+        <p>The Gospel Experience was built for Ignition NorCal, Oct 23 and 24, by the same team that ran the weekend.</p>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="label"><span class="tape black">Questions</span></div>
+    <h2>Good to <em>know</em></h2>
+    <div class="faq">
+      <details open><summary>Is this a church event?</summary><p>Yes. It's a Christian experience hosted at Harbor Bay, and it's open to anyone, whatever you believe.</p></details>
+      <details><summary>Does it cost anything?</summary><p>No. It's free.</p></details>
+      <details><summary>Can I bring my kids or parents?</summary><p>Yes, all ages are welcome. Families have already signed up together.</p></details>
+      <details><summary>Do I have to talk or share anything?</summary><p>No. You can simply walk through. There's a quiet room afterward if you want to talk.</p></details>
+      <details><summary>What's the difference between Sunday and Friday?</summary><p>On Sundays a guide walks your group through. On select Friday nights, the person who signed up leads their own group.</p></details>
+    </div>
+  </section>
+</div>
+
+<section class="invite">
+  <div class="cwrap">
+    <img class="splat" src="img/splat-orange.png" alt="">
+    <img class="cw" src="img/type-come-with-me.png" alt="Come with me?">
+  </div>
+  <p>Send this page to a friend and pick a time to go together.</p>
+</section>
+
+<div class="wrap">
+  <footer>
+    <span>Built by the Ignition NorCal team at Harbor Bay. @aym.bayarea</span>
+    <span>SAMPLE for team feedback</span>
+  </footer>
+</div>
+
+<script>
+document.getElementById('req').addEventListener('submit', function (e) {
+  e.preventDefault();
+  document.getElementById('msg').hidden = false;
+});
+</script>
+</body>
+</html>
